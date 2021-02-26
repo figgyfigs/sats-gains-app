@@ -1,4 +1,29 @@
 body {
     margin: 0;
-    font-family: sans-serif;
+    font-family: ubuntu;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    background: transparent;
+    /* background-color: red; */
 }
+
+.navbar-nav {
+    /* position: absolute;
+    justify-content: end; */
+    margin-left: auto;
+}
+
+.text {
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    margin-top: 100px;
+}
+
+/* nav {
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+} */
