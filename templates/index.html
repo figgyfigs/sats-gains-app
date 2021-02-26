@@ -6,7 +6,41 @@
 
 
 {% block body %}
+    <div class="main-container">
     <div class="text">
-        <h2>Bitcoin would have to be $_______. A percent gain of _________%.</h2>
+        <h2><bold>Bitcoin would have to be $_______. A percent gain of _________%.</bold></h2>
     </div>
+    
+    <div class="form">
+        <form>
+            <div class="row g-3 align-items-center">
+                <div class="col-auto">
+                    <label for="money-spent" class="col-form-label">Cuck bucks:</label>
+                </div>
+            <div class="col-4">
+                <input type="text" id="money-spent" class="form-control" aria-describedby="passwordHelpInline">
+            </div>
+            <div class="col-auto">
+                <span id="passwordHelpInline" class="form-text">
+                    Cuck bucks spent
+                </span>
+            </div>
+            </div>
+
+            <div class="row g-3 align-items-center">
+                <div class="col-auto">
+                    <label for="sats-rewarded" class="col-form-label">Sats rewarded:</label>
+                </div>
+            <div class="col-4">
+                <input type="text" id="sats-rewarded" class="form-control" aria-describedby="passwordHelpInline">
+            </div>
+            <div class="col-auto">
+                <span id="passwordHelpInline" class="form-text">
+                    Sats rewarded for the purchase
+                </span>
+            </div>
+            </div>
+        </form>
+    </div>
+    <div/>
 {% endblock %}
