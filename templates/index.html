@@ -12,13 +12,13 @@
     </div>
     
     <div class="form">
-        <form>
+        <form method="POST">
             <div class="row g-3 align-items-center">
                 <div class="col-auto">
                     <label for="money-spent" class="col-form-label">Cuck bucks:</label>
                 </div>
             <div class="col-4">
-                <input type="text" id="money-spent" class="form-control" aria-describedby="passwordHelpInline">
+                <input type="text" name="amount" id="money-spent" class="form-control">
             </div>
             <div class="col-auto">
                 <span id="passwordHelpInline" class="form-text">
@@ -32,7 +32,7 @@
                     <label for="sats-rewarded" class="col-form-label">Sats rewarded:</label>
                 </div>
             <div class="col-4">
-                <input type="text" id="sats-rewarded" class="form-control" aria-describedby="passwordHelpInline">
+                <input type="text" name="sats" id="sats-rewarded" class="form-control">
             </div>
             <div class="col-auto">
                 <span id="passwordHelpInline" class="form-text">
@@ -43,5 +43,5 @@
 	    <button type="submit" class="btn btn-primary">Submit</button>
         </form>
     </div>
-    <div/>
+    </div>
 {% endblock %}
