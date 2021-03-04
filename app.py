@@ -8,7 +8,9 @@ def index():
     if request.method == "POST":
         user_amount = request.form['amount']
         sats_back = request.form['sats']
-        print("The user spent: " + user_amount + " and got " + sats_back + " in sats back")
+        print(type(sats_back))
+        price = get_price()
+        print("The user spent: " + user_amount + " and got " + sats_back + " in sats back." + " The current price of bitcoin is " + str(price))
     return render_template('index.html')
 
 def get_price():
@@ -18,6 +20,15 @@ def get_price():
     response = response.json()
     bitcoin_price = response['bitcoin']['usd']
     return bitcoin_price
+
+def calculate_percent():
+    pass
+
+#converts sats to decimal equivalent i.e 8 decimal places
+def convert_to_dec(sats):
+    length = len(sats)
+    print(length)
+
 
 get_price()
 
