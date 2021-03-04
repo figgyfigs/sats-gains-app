@@ -11,6 +11,7 @@ def index():
         print(type(sats_back))
         price = get_price()
         print("The user spent: " + user_amount + " and got " + sats_back + " in sats back." + " The current price of bitcoin is " + str(price))
+        print("test" + str(convert_to_dec(sats_back)))
     return render_template('index.html')
 
 def get_price():
@@ -24,10 +25,12 @@ def get_price():
 def calculate_percent():
     pass
 
-#converts sats to decimal equivalent i.e 8 decimal places
+#converts sats to decimal equivalent (i.e 8 decimal places)
+# 2345 -> 0.00002345
 def convert_to_dec(sats):
-    length = len(sats)
-    print(length)
+    second_str = sats.zfill(8)
+    btc = "0." + second_str
+    print(int(btc))
 
 
 get_price()
