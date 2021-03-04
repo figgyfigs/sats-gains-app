@@ -6,12 +6,14 @@ app = Flask(__name__)
 @app.route('/', methods=['POST', 'GET'])
 def index():
     if request.method == "POST":
-        user_amount = request.form['amount']
-        sats_back = request.form['sats']
-        print(type(sats_back))
-        price = get_price()
-        print("The user spent: " + user_amount + " and got " + sats_back + " in sats back." + " The current price of bitcoin is " + str(price))
-        print("test" + str(convert_to_dec(sats_back)))
+        amount_paid = request.form['amount']
+        sats_earned = request.form['sats']
+        format_sats = convert_to_dec(sats_earned)
+        price_of_bitcoin = get_price()
+
+        #current fiat price of the sats earned
+        fiat_worth = price_of_bitcoin * format_sats
+        print(round(fiat_worth, 2))
     return render_template('index.html')
 
 def get_price():
@@ -28,12 +30,13 @@ def calculate_percent():
 #converts sats to decimal equivalent (i.e 8 decimal places)
 # 2345 -> 0.00002345
 def convert_to_dec(sats):
-    second_str = sats.zfill(8)
-    btc = "0." + second_str
-    print(int(btc))
+    pre_str = "0."
+    post_str = sats.zfill(8)
+    amount = pre_str + post_str
+    return float(amount)
 
 
-get_price()
+#get_price()
 
 if __name__ == '__main__':
     app.run(debug=True)
