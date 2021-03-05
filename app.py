@@ -12,20 +12,24 @@ def index():
         price_of_bitcoin = get_price()
 
         #current fiat price of the sats earned
-        fiat_worth = price_of_bitcoin * format_sats
-        print(round(fiat_worth, 2))
+        fiat_worth = round(price_of_bitcoin * format_sats)
+        calc_percent_gain(amount_paid, fiat_worth)
     return render_template('index.html')
 
-def get_price():
-    price_url = "https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd&include_market_cap=true&\
-                    include_24hr_vol=false&include_24hr_change=false&include_last_updated_at=false"
-    response = requests.get(price_url)
-    response = response.json()
-    bitcoin_price = response['bitcoin']['usd']
-    return bitcoin_price
+def calc_percent_gain(final, initial):
+    #dollar percentage increase
+    #parameters needed: amount the user paid and current price of the sats sats_earned
+    #FORMULA: % increase = 100 x ((final * initial) / initial)
+    percentage_gain = (100 * ((final - initial) / initial))
+    return percentage_gain
 
-def calculate_percent():
-    pass
+
+def calc_bitcoin_price(price, percentage):
+    #convert percentage to decimal
+    dec = percentage / 100
+    future_price = price * dec
+    return future_price
+
 
 #converts sats to decimal equivalent (i.e 8 decimal places)
 # 2345 -> 0.00002345
@@ -35,8 +39,13 @@ def convert_to_dec(sats):
     amount = pre_str + post_str
     return float(amount)
 
-
-#get_price()
+def get_price():
+    price_url = "https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd&include_market_cap=true&\
+                    include_24hr_vol=false&include_24hr_change=false&include_last_updated_at=false"
+    response = requests.get(price_url)
+    response = response.json()
+    bitcoin_price = response['bitcoin']['usd']
+    return bitcoin_price
 
 if __name__ == '__main__':
     app.run(debug=True)
