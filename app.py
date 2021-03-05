@@ -5,16 +5,21 @@ app = Flask(__name__)
 
 @app.route('/', methods=['POST', 'GET'])
 def index():
+    display_price = ""
+    percent = ""
     if request.method == "POST":
         amount_paid = request.form['amount']
         sats_earned = request.form['sats']
         format_sats = convert_to_dec(sats_earned)
-        price_of_bitcoin = get_price()
+        bitcoin_price = get_price()
 
         #current fiat price of the sats earned
-        fiat_worth = round(price_of_bitcoin * format_sats)
-        calc_percent_gain(amount_paid, fiat_worth)
-    return render_template('index.html')
+        fiat_worth = round(bitcoin_price * format_sats, 2)
+        percent = round(calc_percent_gain(float(amount_paid), fiat_worth))
+        display_price = round(calc_bitcoin_price(bitcoin_price, percent))
+        #print(display_price)
+        #print(percent)
+    return render_template('index.html', price=display_price, percent=percent)
 
 def calc_percent_gain(final, initial):
     #dollar percentage increase
