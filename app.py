@@ -21,11 +21,9 @@ def index():
         fiat_worth = round(bitcoin_price * format_sats, 2)
         percent = round(calc_percent_gain(float(amount_paid), fiat_worth))
         display_price = round(calc_bitcoin_price(bitcoin_price, percent))
-        #str_price = str(display_price)
-        final_price = str(display_price)
-        #str_percent = str(percent)
-        final_price = str(percent)
         submit = True
+        final_price = str(display_price)
+        final_percent = str(percent)
     return render_template('index.html', submit=submit, price=final_price, percent=final_percent)
 
 #dollar percentage increase
