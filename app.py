@@ -8,9 +8,7 @@ def index():
     submit = False
     final_price = "___"
     final_percent = "___"
-    #str = "Got sats back on a purchase? Calculate at what price bitcoin would have \
-        #to be in order for that item to be paid off."
-
+    
     if request.method == "POST":
         amount_paid = request.form['amount']
         sats_earned = request.form['sats']
