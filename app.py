@@ -28,13 +28,16 @@ def index():
 #parameters needed: amount the user paid and current price of the sats sats_earned
 #FORMULA: % increase = 100 x ((final * initial) / initial)
 def calc_percent_gain(final, initial):
-    percentage_gain = (100 * ((final - initial) / initial))
-    return percentage_gain
+    print(final, initial)
+    percentage_gain = ((final - initial) / initial)
+    return (percentage_gain - 1) * 100
 
 
 def calc_bitcoin_price(price, percentage):
     #convert percentage to decimal
+    print(percentage)
     dec = percentage / 100
+    print(dec)
     future_price = price * dec
     return future_price
 
