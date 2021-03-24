@@ -6,26 +6,24 @@ app = Flask(__name__)
 @app.route('/', methods=['POST', 'GET'])
 def index():
     submit = False
-    final_price = "___"
-    final_percent = "___"
+    display_price = "    "
+    display_percent = "    "
     
     if request.method == "POST":
-        amount_paid = request.form['amount']
-        sats_earned = request.form['sats']
-        format_sats = convert_to_dec(sats_earned)
+        form_amount = request.form['amount']
+        form_sats = request.form['sats']
+        format_sats = convert_to_dec(form_sats)
         bitcoin_price = get_price()
 
-        #current fiat price of the sats earned
-        fiat_worth = round(bitcoin_price * format_sats, 2)
-        percent = round(calc_percent_gain(float(amount_paid), fiat_worth))
-        display_price = round(calc_bitcoin_price(bitcoin_price, percent))
+        fiat_worth = round(bitcoin_price * format_sats, 2) #current price of the sats earned
+        percent = round(calc_percent_gain(float(form_amount), fiat_worth))
+        display_price = str(round(calc_bitcoin_price(bitcoin_price, percent), 2))
         submit = True
-        final_price = str(display_price)
-        final_percent = str(percent)
-    return render_template('index.html', submit=submit, price=final_price, percent=final_percent)
+        display_percent = str(percent)
+    return render_template('index.html', submit=submit, price=display_price, percent=display_percent)
 
 #dollar percentage increase
-#parameters needed: amount the user paid and current price of the sats sats_earned
+#parameters needed: amount the user paid and current price of the sats form_sats
 #FORMULA: % increase = 100 x ((final * initial) / initial)
 def calc_percent_gain(final, initial):
     percentage_gain = ((final - initial) / initial)
