@@ -6,8 +6,8 @@ app = Flask(__name__)
 @app.route('/', methods=['POST', 'GET'])
 def index():
     submit = False
-    display_price = "    "
-    display_percent = "    "
+    display_price = "     "
+    display_percent = "     "
     
     if request.method == "POST":
         form_amount = request.form['amount']

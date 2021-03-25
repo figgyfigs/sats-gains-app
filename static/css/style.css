@@ -32,11 +32,23 @@ body {
 
 .output {
     text-decoration: underline;
-    text-decoration-thickness: 5px;
-    color: orange;
-    margin-bottom: 5px;
+    text-decoration-thickness: 3px;
+    /* color: orange; */
 }
 
+.price {
+    color: #FF9900;
+    text-decoration-skip-ink: none;
+}
+
+.percent {
+    color: green;
+}
+
+.btn {
+    width: 50%;
+    text-align: center;
+}
 /* nav {
     width: 60%;
     margin-left: auto;
