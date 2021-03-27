@@ -8,18 +8,18 @@
 {% block body %}
     <div class="main-container">
     <div class="text">
-        <!-- <h2>Bitcoin would have to be</h2>
-        <h1 class="output"><bold>${{ price }}</bold></h1>
-        <h2> for your item to be paid off. A percent gain of </h2>
-        <h1 class="output"><bold>{{ percent }}%</bold></h1> -->
-        <h1>Bitcoin would have to be <span class="output price">${{ price }}</span> for your item to be paid off. A percent gain of <span class="output percent">{{ percent }}%</span></h1>
+        {% if submit %}
+            <h1>Bitcoin would have to be <span class="output price">${{ price }}</span> for your item to be paid off. A percent gain of <span class="output percent">{{ percent }}%</span></h1>
+        {% else %}
+            <h1>Bitcoin would have to be <span class="output price">{{ price }}</span> for your item to be paid off. A percent gain of <span class="output percent">{{ percent }}</span></h1>
+        {% endif %}
     </div>
 
     <div class="form">
         <form method="POST">
             <div class="row g-3 align-items-center">
                 <div class="col-auto">
-                    <label for="money-spent" class="col-form-label">Cuck bucks:</label>
+                    <label for="money-spent" class="col-form-label">Amount spent:</label>
                 </div>
             <div class="col-4">
                 <input type="text" name="amount" id="money-spent" class="form-control">
