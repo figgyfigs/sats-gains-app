@@ -5,12 +5,9 @@ body {
     margin-left: auto;
     margin-right: auto;
     background: transparent;
-    /* background-color: red; */
 }
 
 .navbar-nav {
-    /* position: absolute;
-    justify-content: end; */
     margin-left: auto;
 }
 
@@ -18,7 +15,6 @@ body {
     width: 60%;
     margin-left: auto;
     margin-right: auto;
-    /* text-align: center; */
     margin-top: 100px;
 }
 
@@ -48,8 +44,3 @@ body {
     width: 50%;
     text-align: center;
 }
-/* nav {
-    width: 60%;
-    margin-left: auto;
-    margin-right: auto;
-} */
