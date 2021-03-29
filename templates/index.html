@@ -10,6 +10,10 @@
     <div class="text">
         {% if submit %}
             <h1>Bitcoin would have to be <span class="output price">${{ price }}</span> for your item to be paid off. A percent gain of <span class="output percent">{{ percent }}%</span></h1>
+
+            <div class="bitcoin-price">
+                <h2>Current Bitcoin Price: {{ bitcoin_price }}</h2>
+            </div>
         {% else %}
             <h1>Bitcoin would have to be <span class="output price">{{ price }}</span> for your item to be paid off. A percent gain of <span class="output percent">{{ percent }}</span></h1>
         {% endif %}
