@@ -6,8 +6,8 @@ app = Flask(__name__)
 @app.route('/', methods=['POST', 'GET'])
 def index():
     submit = False
-    display_price = "___"
-    display_percent = "___"
+    display_price = "____"
+    display_percent = "____"
     
     if request.method == "POST":
         form_amount = request.form['amount']
@@ -17,8 +17,9 @@ def index():
 
         fiat_worth = round(bitcoin_price * format_sats, 2) #current usd price of the sats earned
         percent = round(calc_percent_gain(float(form_amount), fiat_worth))
-        display_price = str(round(calc_bitcoin_price(bitcoin_price, percent), 2))
-        display_percent = str(percent)
+        price = round(calc_bitcoin_price(bitcoin_price, percent), 2)
+        display_price = f"{price:,}"
+        display_percent = f"{percent:,}"
         submit = True
 
     return render_template('index.html', submit=submit, price=display_price, percent=display_percent)
@@ -51,8 +52,13 @@ def get_price():
                     include_24hr_vol=false&include_24hr_change=false&include_last_updated_at=false"
     response = requests.get(price_url)
     response = response.json()
+    print(response)
     bitcoin_price = response['bitcoin']['usd']
     return bitcoin_price
+
+#
+def format_price():
+    pass
 
 if __name__ == '__main__':
     app.run(debug=True)
