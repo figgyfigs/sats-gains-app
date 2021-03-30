@@ -9,14 +9,16 @@
     <div class="main-container">
     <div class="text">
         {% if submit %}
-            <h1>Bitcoin would have to be <span class="output price">${{ price }}</span> for your item to be paid off. A percent gain of <span class="output percent">{{ percent }}%</span></h1>
-
-            <div class="bitcoin-price">
-                <h2>Current Bitcoin Price: {{ bitcoin_price }}</h2>
-            </div>
+            <h2>Bitcoin would have to be <span class="output price">${{ price }}</span>
+                for your item to be paid off. A gain of <span class="output percent">{{ percent }}%</span></h2>
         {% else %}
-            <h1>Bitcoin would have to be <span class="output price">{{ price }}</span> for your item to be paid off. A percent gain of <span class="output percent">{{ percent }}</span></h1>
+            <h2>Bitcoin would have to be <span class="output price">{{ price }}</span> 
+                for your item to be paid off. A gain of <span class="output percent">{{ percent }}</span></h2>
         {% endif %}
+    </div>
+
+    <div class="bitcoin-price">
+        <h4>Current Bitcoin Price: {{ bitcoin_price }}</h4>
     </div>
 
     <div class="form">
@@ -30,7 +32,7 @@
             </div>
             <div class="col-auto">
                 <span id="passwordHelpInline" class="form-text">
-                    Cuck bucks spent
+                    USD cuck bucks
                 </span>
             </div>
             </div>
@@ -44,7 +46,7 @@
             </div>
             <div class="col-auto">
                 <span id="passwordHelpInline" class="form-text">
-                    Sats rewarded for the purchase
+        
                 </span>
             </div>
             </div>
