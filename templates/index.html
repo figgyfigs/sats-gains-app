@@ -21,7 +21,20 @@
         <h4>Current Bitcoin Price: {{ bitcoin_price }}</h4>
     </div>
 
-    <div class="form">
+    <form>
+        <ul>
+            <li>
+                <label>Amount Spent</label>
+                <input type="text" name="amount" id="money-spent" placeholder="cuck bucks spent" />
+            </li>
+            <li>
+                <label>Sats rewarded</label>
+                <input type="text" name="sats" id="sats-rewarded" />
+            </li>
+        </ul>
+    </form>
+
+    <!-- <div class="form">
         <form method="POST">
             <div class="row g-3 align-items-center">
                 <div class="col-auto">
@@ -51,7 +64,7 @@
             </div>
             </div>
 	    <button type="submit" class="btn btn-primary">Submit</button>
-        </form>
+        </form> -->
     </div>
     </div>
 {% endblock %}
