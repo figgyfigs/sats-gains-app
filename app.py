@@ -22,7 +22,7 @@ def index():
         display_percent = f"{percent:,}"
         submit = True
 
-    return render_template('index.html', bitcoin_price=bitcoin_price, submit=submit, price=display_price, percent=display_percent)
+    return render_template('index.html', bitcoin_price=f"{bitcoin_price:,}", submit=submit, price=display_price, percent=display_percent)
 
 #dollar percentage increase
 #parameters needed: amount the user paid and current price of the sats form_sats

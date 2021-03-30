@@ -18,11 +18,11 @@
     </div>
 
     <div class="bitcoin-price">
-        <h4>Current Bitcoin Price: {{ bitcoin_price }}</h4>
+        <h4>Current Bitcoin Price: <span class="current-price">{{ bitcoin_price }}</span></h4>
     </div>
 
     <form>
-        <ul>
+        <ul class="form-style">
             <li>
                 <label>Amount Spent</label>
                 <input type="text" name="amount" id="money-spent" placeholder="cuck bucks spent" />
