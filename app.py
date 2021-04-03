@@ -9,6 +9,7 @@ def index():
     display_price = "??????"
     display_percent = "??????"
     bitcoin_price = get_price()
+    bitcoin_price = f"{bitcoin_price:,}"
     
     if request.method == "POST":
         form_amount = request.form['amount']
@@ -20,6 +21,7 @@ def index():
         price = round(calc_bitcoin_price(bitcoin_price, percent), 2)
         display_price = f"{price:,}"
         display_percent = f"{percent:,}"
+
         submit = True
 
     return render_template('index.html', bitcoin_price=bitcoin_price, submit=submit, price=display_price, percent=display_percent)
