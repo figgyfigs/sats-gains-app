@@ -23,6 +23,16 @@ body {
   border-style: solid;
 }
 
+.bitcoin-price {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  text-align: center;
+  border-radius: 8px;
+  color: #fff;
+  background-color: blue;
+}
+
 
 
 

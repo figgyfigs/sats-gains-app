@@ -8,9 +8,9 @@ def index():
     submit = False
     display_price = "??????"
     display_percent = "??????"
-    bitcoin_price = get_price()
+    bitcoin_price = 60000
     bitcoin_price = f"{bitcoin_price:,}"
-    
+
     if request.method == "POST":
         form_amount = request.form['amount']
         form_sats = request.form['sats']
