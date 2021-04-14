@@ -1,4 +1,76 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  margin: 40px 0;
+  width: 600px;
+  height: 600px;
+  padding: 30px 50px;
+  border-radius: 15px;
+  border-width: 2px;
+  border-color: orange;
+  border-style: solid;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* body {
     margin: 0;
     font-family: ubuntu;
     width: 50%;
@@ -88,4 +160,4 @@ body {
 .btn {
     width: 50%;
     text-align: center;
-}
+} */

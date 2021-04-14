@@ -4,20 +4,18 @@
     Sats the standard
 {% endblock %}
 
-
 {% block body %}
-    <div class="main-container">
-    <div class="text">
-        {% if submit %}
+  <div class="container">
+    {% if submit %}
             <h2>Bitcoin would have to be <span class="output price">${{ price }}</span>
                 for your item to be paid off. A gain of <span class="output percent">{{ percent }}%</span></h2>
         {% else %}
-            <h2>Bitcoin would have to be <span class="output price">{{ price }}</span> 
+            <h2>Bitcoin would have to be <span class="output price">{{ price }}</span>
                 for your item to be paid off. A gain of <span class="output percent">{{ percent }}</span></h2>
         {% endif %}
-    </div>
 
-    <div class="bitcoin-price">
+
+        <div class="bitcoin-price">
         <h4>Current Bitcoin Price: <span class="current-price">${{ bitcoin_price }}</span></h4>
     </div>
 
@@ -34,7 +32,7 @@
         </ul>
     </form>
 
-    <!-- <div class="form">
+    <div class="form">
         <form method="POST">
             <div class="row g-3 align-items-center">
                 <div class="col-auto">
@@ -59,12 +57,12 @@
             </div>
             <div class="col-auto">
                 <span id="passwordHelpInline" class="form-text">
-        
+
                 </span>
             </div>
             </div>
 	    <button type="submit" class="btn btn-primary">Submit</button>
-        </form> -->
+        </form>
     </div>
-    </div>
+  </div>
 {% endblock %}
