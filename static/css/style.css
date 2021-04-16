@@ -19,18 +19,32 @@ body {
   padding: 30px 50px;
   border-radius: 15px;
   border-width: 2px;
-  border-color: orange;
   border-style: solid;
+}
+
+.main-text {
+  text-align: center;
 }
 
 .bitcoin-price {
   position: relative;
   width: 100%;
-  overflow: hidden;
+  /* overflow: hidden; */
   text-align: center;
   border-radius: 8px;
-  color: #fff;
-  background-color: blue;
+  color: black;
+  background-color: #FF9900;
+}
+
+.form {
+  position: relative;
+  width: 100%;
+  text-align: center;
+  list-style-type: none;
+}
+
+.form li {
+  list-style-type: none;
 }
 
 

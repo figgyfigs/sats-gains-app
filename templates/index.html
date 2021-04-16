@@ -6,20 +6,20 @@
 
 {% block body %}
   <div class="container">
-    {% if submit %}
-            <h2>Bitcoin would have to be <span class="output price">${{ price }}</span>
-                for your item to be paid off. A gain of <span class="output percent">{{ percent }}%</span></h2>
-        {% else %}
-            <h2>Bitcoin would have to be <span class="output price">{{ price }}</span>
-                for your item to be paid off. A gain of <span class="output percent">{{ percent }}</span></h2>
-        {% endif %}
-
-
-        <div class="bitcoin-price">
-        <h4>Current Bitcoin Price: <span class="current-price">${{ bitcoin_price }}</span></h4>
+    <div class="main-text">
+      {% if submit %}
+        <h2>Bitcoin would have to be <span class="output price">${{ price }}</span> for your item to be paid off. A gain of <span class="output percent">{{ percent }}%</span></h2>
+      {% else %}
+        <h2>Bitcoin would have to be <span class="output price">{{ price }}</span> for your item to be paid off. A gain of <span class="output percent">{{ percent }}</span></h2>
+      {% endif %}
     </div>
 
-    <form>
+    <div class="bitcoin-price">
+      <h4>Current Bitcoin Price: <span class="current-price">${{ bitcoin_price }}</span></h4>
+    </div>
+
+    <div class="form">
+      <form>
         <ul class="form-style">
             <li>
                 <label>Amount Spent</label>
@@ -30,9 +30,10 @@
                 <input type="text" name="sats" id="sats-rewarded" />
             </li>
         </ul>
-    </form>
+      </form>
+    </div>
 
-    <div class="form">
+    <!-- <div class="form">
         <form method="POST">
             <div class="row g-3 align-items-center">
                 <div class="col-auto">
@@ -63,6 +64,6 @@
             </div>
 	    <button type="submit" class="btn btn-primary">Submit</button>
         </form>
-    </div>
+    </div> -->
   </div>
 {% endblock %}
