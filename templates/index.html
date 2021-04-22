@@ -20,11 +20,18 @@
       <h4>Current Bitcoin Price: <span class="current-price">${{ bitcoin_price }}</span></h4>
     </div>
 
-    <form>
-      <div class="amount">
-        <input type="text" name="name" />
+    <form method="POST">
+      <div class="field">
+        <input type="text" name="name" required />
         <label class="label-name" for="name">
           <span class="content-name">Name</span>
+        </label>
+      </div>
+
+      <div class="field">
+        <input type="text" name="sats" required />
+        <label class="label-name" for="sats">
+          <span class="content-name">Sats earned</span>
         </label>
       </div>
       
