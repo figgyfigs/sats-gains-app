@@ -13,11 +13,31 @@ body {
   font-family: sans-serif;
 }
 
+.main-text {
+  text-align: center;
+  width: 40%;
+}
+
+.bitcoin-price {
+  position: relative;
+  width: 30%;
+  text-align: center;
+  border-radius: 8px;
+  color: black;
+  /* background-color: #FF9900; */
+}
+
+.current-price {
+  background-color: #FF9900;
+  color: white;
+}
+
 .field {
   width: 100%;
   position: relative;
   overflow: hidden;
   height: 50px;
+  margin-bottom: 50px;
 }
 
 form .field input {
@@ -74,12 +94,30 @@ form .field input:focus + .label-name::after, form .field input:valid + .label-n
   transform: translate(0%);
 }
 
+.form-button {
+  width: 100%;
+  border-radius: 5px;
+  height: 30px;
+}
 
 
 
 
 
 
+.output {
+  text-decoration: underline;
+  text-decoration-thickness: 3px;
+  text-decoration-skip-ink: none;
+}
+
+.price {
+  color: #FF9900;
+}
+
+.percent {
+  color: green;
+}
 
 
 
@@ -112,78 +150,6 @@ body {
   border-style: solid;
 }
 
-.main-text {
-  text-align: center;
-}
-
-.bitcoin-price {
-  position: relative;
-  width: 100%;
-  overflow: hidden;
-  text-align: center;
-  border-radius: 8px;
-  color: black;
-  background-color: #FF9900;
-}
-
-.form {
-  position: relative;
-  width: 100%;
-  text-align: center;
-  list-style-type: none;
-}
-
-.form li {
-  list-style-type: none;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* body {
     margin: 0;
     font-family: ubuntu;
@@ -209,12 +175,6 @@ body {
 .current-price {
     background-color: #FF9900;
     color: white;
-}
-
-.form-style li {
-    padding: 0;
-    display: block;
-    list-style: none;
 }
 
 .form-style label {
@@ -271,7 +231,3 @@ body {
     color: green;
 }
 
-.btn {
-    width: 50%;
-    text-align: center;
-} */

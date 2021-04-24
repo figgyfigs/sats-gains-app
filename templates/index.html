@@ -5,16 +5,14 @@
 {% endblock %}
 
 {% block body %}
-  <!-- <div class="container"> -->
-    <!-- <div class="main-text"> -->
-      <!-- {% if submit %}
+  <!-- <div class="container">  -->
+    <div class="main-text"> 
+      {% if submit %}
         <h2>Bitcoin would have to be <span class="output price">${{ price }}</span> for your item to be paid off. A gain of <span class="output percent">{{ percent }}%</span></h2>
       {% else %}
         <h2>Bitcoin would have to be <span class="output price">{{ price }}</span> for your item to be paid off. A gain of <span class="output percent">{{ percent }}</span></h2>
-      {% endif %} -->
-    <!-- </div> -->
-
-    <h1>Animation Input</h1>
+      {% endif %} 
+    </div> 
 
     <div class="bitcoin-price">
       <h4>Current Bitcoin Price: <span class="current-price">${{ bitcoin_price }}</span></h4>
@@ -34,13 +32,9 @@
           <span class="content-name">Sats earned</span>
         </label>
       </div>
-      
-      <!-- <div class="reward">
-        <input type="text" name="name" required />
-        <label class="label-amount" for="amount">
-          <span class="content-amount">Sats back</span>
-        </label>
-      </div> -->
+      <button class="form-button" type="submit">
+        Submit
+      </button>
     </form>
 
 
