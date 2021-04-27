@@ -8,8 +8,8 @@ def index():
     submit = False
     display_price = "??????"
     display_percent = "??????"
-    bitcoin_price = 60000
-    bitcoin_price = f"{bitcoin_price:,}"
+    bitcoin_price = get_price()
+    bitcoin_price = bitcoin_price
 
     if request.method == "POST":
         form_amount = request.form['amount']
@@ -24,7 +24,7 @@ def index():
 
         submit = True
 
-    return render_template('index.html', bitcoin_price=bitcoin_price, submit=submit, price=display_price, percent=display_percent)
+    return render_template('index.html', bitcoin_price=f"{bitcoin_price:,}", submit=submit, price=display_price, percent=display_percent)
 
 #dollar percentage increase
 #parameters needed: amount the user paid and current price of the sats form_sats
@@ -54,7 +54,6 @@ def get_price():
                     include_24hr_vol=false&include_24hr_change=false&include_last_updated_at=false"
     response = requests.get(price_url)
     response = response.json()
-    print(response)
     bitcoin_price = response['bitcoin']['usd']
     return bitcoin_price
 
