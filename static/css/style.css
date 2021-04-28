@@ -13,24 +13,38 @@ body {
   font-family: sans-serif;
 }
 
+.container {
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  /* margin-top: 100px; */
+  border-style: solid;
+  border-radius: 15px;
+  /* height: 60%; */
+  padding: 40px;
+}
+
 .main-text {
   text-align: center;
-  width: 40%;
+  width: 100%;
+  margin-bottom: 20px;
 }
 
 .bitcoin-price {
   position: relative;
-  width: 30%;
+  width: 100%;
   text-align: center;
   border-radius: 8px;
   color: black;
   /* background-color: #FF9900; */
+  margin-bottom: 30px;
 }
 
 .current-price {
   background-color: #FF9900;
   color: white;
 }
+
 
 .field {
   width: 100%;
@@ -96,14 +110,19 @@ form .field input:focus + .label-name::after, form .field input:valid + .label-n
 
 .form-button {
   width: 100%;
-  border-radius: 5px;
+  border-radius: 10px;
   height: 30px;
+  color: #FF9900;
+  background-color: white;
+  border-color: #FF9900;
+  font-weight: 2rem;
 }
 
-
-
-
-
+.form-button:hover {
+  background-color: #FF9900;
+  color: white;
+  transition: ease-out 0.3s;
+}
 
 .output {
   text-decoration: underline;
@@ -121,15 +140,17 @@ form .field input:focus + .label-name::after, form .field input:valid + .label-n
 
 
 
+/* 
 
-
-
-
-
-
-
-
-
+.container {
+  margin: 40px 0;
+  width: 50%;
+  /* height: 100%; 
+  padding: 30px 50px;
+  border-radius: 15px;
+  border-width: 2px;
+  border-style: solid;
+} */
 
 /*
 body {
