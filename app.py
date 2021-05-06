@@ -26,8 +26,6 @@ def index():
 
     return render_template('index.html', bitcoin_price=f"{bitcoin_price:,}", submit=submit, price=display_price, percent=display_percent)
 
-#dollar percentage increase
-#parameters needed: amount the user paid and current price of the sats form_sats
 #FORMULA: % increase = 100 x ((final * initial) / initial)
 def calc_percent_gain(final, initial):
     percentage_gain = ((final - initial) / initial)
@@ -39,7 +37,6 @@ def calc_bitcoin_price(price, percentage):
     dec = percentage / 100
     future_price = price * (1 + dec)
     return future_price
-
 
 #converts sats to decimal equivalent (i.e 8 decimal places)
 # 2345 -> 0.00002345
@@ -56,10 +53,6 @@ def get_price():
     response = response.json()
     bitcoin_price = response['bitcoin']['usd']
     return bitcoin_price
-
-#
-def format_price():
-    pass
 
 if __name__ == '__main__':
     app.run(debug=True)
